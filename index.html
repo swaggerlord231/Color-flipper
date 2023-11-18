@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Color flipper</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<header>
+		<nav>
+			<h1>Swagger color-flipper | Simple</h1>
+			<ul>
+				<li><a href="#">Simple</a></li>
+				<li><a href="hex.html">Hex</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<main>
+		<div class="container">
+			<h2>background: <span id="color">color</span> </h2>
+			<button class="btn">click to Change Color</button>
+		</div>
+	</main>
+
+	<script>
+		let simple = ['black', 'orange', 'silver', 'maroon', 'red', 'purple', "fuchsia", "lime", 'yellow', 'navy',
+			'blue', 'teal', 'aqua','green', 'aliceBlue','antiquewhite','aquamarine','yellowGreen','greenYellow', 'lightYellow','violet','turquoise','tomato','tan','thistle','steelBlue','springGreen','snow','grey','slateGrey','slateBlue','cobaltBlue','skyBlue','seaGreen','earthBlue'];
+
+		const color = document.getElementById('color')
+		const btn = document.querySelector('.btn');
+		const body = document.querySelector('body');
+
+		btn.addEventListener('click', randomColor, false);
+
+		function randomColor() {
+			let colorName = simple[getRandomNumber()];
+				console.log(color);
+			color.innerHTML=colorName
+			body.style.backgroundColor=colorName;
+			};
+		function getRandomNumber(){
+			return Math.floor(Math.random()* simple.length);
+		}
+
+	</script>
+</body>
+</html>
